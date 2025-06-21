@@ -380,8 +380,6 @@ const Chatbot = () => {
                 type: 'text',
                 text: `Maaf, terjadi masalah saat menghubungi server lokal: ${error.message}`
             };
-        } finally {
-            console.log("response: =====> ", message);
         }
     };
 
