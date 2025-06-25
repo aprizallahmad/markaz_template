@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, use } from 'react';
+import { supabase } from '../utils/supabase';
 // Hapus: import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // --- Ikon SVG ---
@@ -136,10 +137,9 @@ const dataKegiatan = [
 
 
 // --- Komponen Halaman (Tidak berubah) ---
-
 const HomePage = ({ navigateTo }) => (
     <div>
-        <div className="relative bg-red-800 text-white py-20 sm:py-32">
+        <div className="relative bg-red-500 text-white py-20 sm:py-32">
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="container mx-auto px-6 text-center relative z-10">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-down">Selamat Datang di</h1>
@@ -268,7 +268,7 @@ const KegiatanPage = () => (
 
 
 // --- Komponen Chatbot ---
-const Chatbot = () => {
+const Chatbot = ({ setShowAdminLink }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
@@ -333,7 +333,7 @@ const Chatbot = () => {
 
     // Fungsi baru untuk berinteraksi dengan backend lokal Anda
     const getBackendResponse = async (prompt, fileData = null) => {
-        
+
 
         const payload = { prompt };
         console.log("Hit generate-text:", prompt);
@@ -390,6 +390,7 @@ const Chatbot = () => {
         setIsLoading(true);
         const userPrompt = input || "Tolong jelaskan isi file ini.";
         let filePayload = null;
+        console.log("input:", input); // Tambahkan ini
 
         // Menampilkan pesan pengguna di UI terlebih dahulu
         if (uploadedFile) {
@@ -429,6 +430,18 @@ const Chatbot = () => {
         } else {
             setMessages(prev => [...prev, { type: 'text', text: backendResponse.text, sender: 'bot' }]);
         }
+        console.log("viewAdminStatus:", backendResponse.text.includes('khodimul markaz'));
+        const teks = backendResponse.text
+
+        // 2. Kata atau frasa kunci yang ingin dideteksi
+        const kataKunci = "khodimul markaz";
+
+        // 3. Proses Pengecekan
+        //    Kita gunakan .toLowerCase() pada kedua string untuk memastikan pencarian tidak peka huruf besar/kecil.
+        //    Ini akan menemukan "Khodimul Markaz", "khodimul markaz", atau "KHODIMUL MARKAZ".
+        if (teks.toLowerCase().includes(kataKunci.toLowerCase())) {
+            setShowAdminLink(true);
+        }
         setIsLoading(false);
     };
 
@@ -441,7 +454,7 @@ const Chatbot = () => {
             </div>
             <div className={`fixed bottom-0 right-0 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 w-full h-full sm:w-96 sm:h-[70vh] sm:max-h-[600px] sm:bottom-6 sm:right-6' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
                 <div className={`bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col h-full w-full overflow-hidden`}>
-                    <div className="flex-shrink-0 flex justify-between items-center p-4 bg-red-700 text-white">
+                    <div className="flex-shrink-0 flex justify-between items-center p-4 bg-red-500 text-white">
                         <h3 className="font-bold">Asisten Virtual</h3>
                         <button onClick={() => setIsOpen(false)} className="hover:text-yellow-300" aria-label="Tutup Chat">
                             <XIcon className="w-6 h-6" />
@@ -513,14 +526,21 @@ const Chatbot = () => {
 };
 
 // --- Komponen Tata Letak (Layout) ---
-const Navbar = ({ navigateTo, currentPage }) => {
+const Navbar = ({ navigateTo, currentPage, showAdminLink }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navLinks = [
-        { id: 'home', text: 'Beranda' },
-        { id: 'profil', text: 'Profil' },
-        { id: 'kegiatan', text: 'Program' },
-        { id: 'kajian', text: 'Info Kajian' },
+        { id: 'home', text: 'Beranda', view: true },
+        { id: 'profil', text: 'Profil', view: true },
+        { id: 'kegiatan', text: 'Program', view: true },
+        { id: 'kajian', text: 'Info Kajian', view: true },
+        { id: 'admin', text: 'Admin', view: showAdminLink }
     ];
+
+    const handleClickNavbar = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+
     const linkClasses = (pageId) => `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${currentPage === pageId ? 'bg-red-700 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white'}`;
     const mobileLinkClasses = (pageId) => `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${currentPage === pageId ? 'bg-red-700 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white'}`;
     return (
@@ -529,13 +549,14 @@ const Navbar = ({ navigateTo, currentPage }) => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
                         <button onClick={() => navigateTo('home')} className="flex items-center space-x-3">
-                            <img src="https://i.imgur.com/2m27xJg.png" alt="Logo Markazul Lughoh" className="h-10 w-10" />
-                            <span className="text-xl font-bold text-red-800 hidden sm:block">Markazul Lughoh</span>
+                            <img src="../src/assets/logo_markaz.png" alt="Logo Markazul Lughoh" className="h-28 w-48" />
+                            {/* <span className="text-xl font-bold text-red-800 hidden sm:block">Markazul Lughoh</span> */}
                         </button>
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             {navLinks.map(link => (
+                                link.view &&
                                 <button key={link.id} onClick={() => navigateTo(link.id)} className={linkClasses(link.id)}>
                                     {link.text}
                                 </button>
@@ -543,7 +564,7 @@ const Navbar = ({ navigateTo, currentPage }) => {
                         </div>
                     </div>
                     <div className="-mr-2 flex md:hidden">
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-white hover:bg-red-600 focus:outline-none">
+                        <button onClick={handleClickNavbar} className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-white hover:bg-red-600 focus:outline-none">
                             <span className="sr-only">Buka menu</span>
                             {isMenuOpen ? <XIcon className="block h-6 w-6" /> : <MenuIcon className="block h-6 w-6" />}
                         </button>
@@ -554,6 +575,7 @@ const Navbar = ({ navigateTo, currentPage }) => {
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navLinks.map(link => (
+                            link.view &&
                             <button key={link.id} onClick={() => { navigateTo(link.id); setIsMenuOpen(false); }} className={mobileLinkClasses(link.id) + ' w-full text-left'}>
                                 {link.text}
                             </button>
@@ -605,16 +627,52 @@ const Footer = () => (
     </footer>
 );
 
+const AdminPage = () => (
+    <div className="bg-gray-100 min-h-screen">
+        <div className="container mx-auto px-6 py-16">
+            <h1 className="text-4xl font-bold text-center mb-12 text-red-800">Halaman Admin</h1>
+            <div className="bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-bold text-red-700 mb-4">Selamat Datang, Khodimul Markaz</h2>
+                <p className="text-gray-700">Ini adalah halaman khusus untuk administrasi. Fitur-fitur admin akan ditampilkan di sini.</p>
+            </div>
+        </div>
+    </div>
+);
+
 // --- Komponen Utama Aplikasi ---
 export default function App() {
+
+    const [articles, setArticles] = useState()
     const [currentPage, setCurrentPage] = useState('home');
+    const [showAdminLink, setShowAdminLink] = useState(false);
+
     useEffect(() => {
         document.title = `Markazul Lughoh | ${currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}`;
         window.scrollTo(0, 0);
+        console.log("currentPage  : ", currentPage);
+
+        if (currentPage == 'home') getArticles()
+        else if (currentPage != 'admin') setShowAdminLink(false);
     }, [currentPage]);
+
+    async function getArticles() {
+        const { data } = await supabase
+            .from('instruments').select()
+        // .select(
+        //     `*, 
+        //     guru (*), 
+        //     mata_pelajaran (*)`
+        // )
+        console.log("getArticles articles data : ", data);
+
+        setArticles(data)
+    }
     const navigateTo = (page) => {
         setCurrentPage(page);
     };
+
+
+
     const renderPage = () => {
         switch (currentPage) {
             case 'profil':
@@ -623,6 +681,8 @@ export default function App() {
                 return <KajianPage />;
             case 'kegiatan':
                 return <KegiatanPage />;
+            case 'admin':
+                return showAdminLink ? <AdminPage /> : <HomePage navigateTo={navigateTo} />;
             case 'home':
             default:
                 return <HomePage navigateTo={navigateTo} />;
@@ -630,12 +690,12 @@ export default function App() {
     };
     return (
         <div className="bg-white font-sans">
-            <Navbar navigateTo={navigateTo} currentPage={currentPage} />
+            <Navbar navigateTo={navigateTo} currentPage={currentPage} showAdminLink={showAdminLink} />
             <main>
                 {renderPage()}
             </main>
             <Footer />
-            <Chatbot />
+            <Chatbot setShowAdminLink={setShowAdminLink} />
         </div>
     );
 }
