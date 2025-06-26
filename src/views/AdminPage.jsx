@@ -12,7 +12,7 @@ export const AdminPage = ({ handleLogout, dataKajian, setDataKajian }) => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if (username === 'admin' && password === 'password') {
+        if (username === import.meta.env.VITE_USER_ADMIN_TEMP && password === import.meta.env.VITE_PASSWORD_ADMIN_TEMP) {
             setIsLoggedIn(true);
             setError('');
         } else {
