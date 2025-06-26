@@ -9,3 +9,15 @@ export const fileToBase64 = (file) => {
         reader.onerror = (error) => reject(error);
     });
 };
+
+export const linkify = (text) => {
+    const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%?=~_|])|(\bwww\.[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%?=~_|])/ig;
+    let newText = text.replace(urlRegex, (url) => {
+        let fullUrl = url;
+        if (!fullUrl.startsWith('http')) {
+            fullUrl = `http://${url}`;
+        }
+        return `<a href="${fullUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">${url}</a>`;
+    });
+    return newText.replace(/\n/g, '<br />');
+};

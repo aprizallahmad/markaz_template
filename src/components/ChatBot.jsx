@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { fileToBase64 } from "../../utils/chatbot";
+import { fileToBase64, linkify } from "../../utils/chatbot";
 import { FileTextIcon, MessageCircleIcon, PaperclipIcon, SendIcon, XIcon } from "../components/Icon";
 import { dataPesantren } from "../datas/data";
 
@@ -214,7 +214,7 @@ export const Chatbot = ({ setShowAdminLink }) => {
                             <div key={index} className={`flex my-2 ${msg.sender === 'bot' ? 'justify-start' : 'justify-end'}`}>
                                 <div className={`px-4 py-2 rounded-2xl max-w-xs lg:max-w-md shadow-sm ${msg.sender === 'bot' ? 'bg-red-100 text-gray-800 rounded-bl-none' : 'bg-blue-500 text-white rounded-br-none'}`}>
                                     {msg.type === 'image' && <img src={msg.src} alt="Gambar buatan AI" className="rounded-lg shadow-md max-w-full" />}
-                                    {msg.type === 'text' && <p className="text-sm" dangerouslySetInnerHTML={{ __html: msg.text }} />}
+                                    {msg.type === 'text' && <p className="text-sm" dangerouslySetInnerHTML={{ __html: linkify(msg.text)  }} />}
                                     {msg.type === 'file_info' && <p className="text-sm italic text-gray-500">{msg.text}</p>}
                                     {msg.type === 'user_upload' && (
                                         <div className="flex flex-col gap-2">

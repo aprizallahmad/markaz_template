@@ -19,7 +19,7 @@ export const Navbar = ({ navigateTo, currentPage, showAdminLink }) => {
     const linkClasses = (pageId) => `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${currentPage === pageId ? 'bg-red-700 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white'}`;
     const mobileLinkClasses = (pageId) => `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${currentPage === pageId ? 'bg-red-700 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white'}`;
     return (
-        <nav className="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-40">
+        <nav className="bg-gradient-to-r from-white to-red-600 backdrop-blur-md shadow-md sticky top-0 z-40">
             <div className="container mx-auto px-6">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">

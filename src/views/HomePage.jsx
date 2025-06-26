@@ -6,7 +6,7 @@ import { dataKajian, dataKegiatan, dataPesantren } from '../datas/data';
 
 export const HomePage = ({ navigateTo }) => (
     <div>
-        <div className="relative bg-red-500 text-white py-20 sm:py-32">
+        <div className="relative bg-gradient-to-b  from-red-600 to-white  text-white py-20 sm:py-32">
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="container mx-auto px-6 text-center relative z-10">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-down">Selamat Datang di</h1>
