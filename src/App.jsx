@@ -47,7 +47,7 @@ export default function App() {
     useEffect(() => {
         document.title = `Markazul Lughoh | ${currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}`;
         window.scrollTo(0, 0);
-        console.log("currentPage  : ", currentPage);
+        // console.log("currentPage  : ", currentPage);
 
         if (currentPage == 'home') getArticles()
     }, [currentPage]);
@@ -60,7 +60,7 @@ export default function App() {
         //     guru (*), 
         //     mata_pelajaran (*)`
         // )
-        console.log("getArticles articles data : ", data);
+        // console.log("getArticles articles data : ", data);
 
         setArticles(data)
     }

@@ -60,8 +60,6 @@ export const Chatbot = ({ setShowAdminLink }) => {
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (!file) return;
-        console.log("handleFileChange file.type :", file.type);
-        console.log("handleFileChange file.name :", file.name);
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -91,10 +89,6 @@ export const Chatbot = ({ setShowAdminLink }) => {
 
 
         const payload = { prompt };
-        console.log("Hit generate-text:", prompt);
-        console.log("endpoint :", endpoint);
-        console.log("inputType :", inputType);
-        console.log("Hit generate-text:", prompt);
         if (fileData) {
             payload.file = fileData;
         }
@@ -124,13 +118,13 @@ export const Chatbot = ({ setShowAdminLink }) => {
                 throw new Error(errorData.message || 'Gagal menghubungi server.');
             }
             const message = await response.json();
-            console.log("response: =====> ", message);
+            // console.log("response: =====> ", message);
 
             // Asumsi backend mengembalikan format: { type: 'text'/'image', content: '...' }
             return await message;
 
         } catch (error) {
-            console.error("Error calling local backend:", error);
+            // console.error("Error calling local backend:", error);
             return {
                 type: 'text',
                 text: `Maaf, terjadi masalah saat menghubungi server lokal: ${error.message}`
@@ -141,11 +135,11 @@ export const Chatbot = ({ setShowAdminLink }) => {
     const handleSendMessage = async (e) => {
         e.preventDefault();
         if ((!input.trim() && !uploadedFile) || isLoading || !isBackendReady) return;
-        console.log("handleSendMessage uploadedFile:", uploadedFile); // Tambahkan ini
+        // console.log("handleSendMessage uploadedFile:", uploadedFile); // Tambahkan ini
         setIsLoading(true);
         const userPrompt = input || "Tolong jelaskan isi file ini.";
         let filePayload = null;
-        console.log("input:", input); // Tambahkan ini
+        // console.log("input:", input); // Tambahkan ini
 
         // Menampilkan pesan pengguna di UI terlebih dahulu
         if (uploadedFile) {
@@ -185,7 +179,7 @@ export const Chatbot = ({ setShowAdminLink }) => {
         } else {
             setMessages(prev => [...prev, { type: 'text', text: backendResponse.text, sender: 'bot' }]);
         }
-        console.log("viewAdminStatus:", backendResponse.text.includes('khodimul markaz'));
+        // console.log("viewAdminStatus:", backendResponse.text.includes('khodimul markaz'));
         const teks = backendResponse.text
         const kataKunci = import.meta.env.VITE_KEY_WORD_ADMIN;
         if (teks.toLowerCase().includes(kataKunci.toString().toLowerCase())) {
