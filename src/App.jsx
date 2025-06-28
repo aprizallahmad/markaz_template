@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, use } from 'react';
-import { supabase } from '../utils/supabase';
+// import { supabase } from './utils/supabase';
 // Hapus: import { GoogleGenerativeAI } from "@google/generative-ai";
 import { 
     MenuIcon, 
@@ -53,8 +53,8 @@ export default function App() {
     }, [currentPage]);
 
     async function getArticles() {
-        const { data } = await supabase
-            .from('instruments').select()
+        // const { data } = await supabase
+        //     .from('instruments').select()
         // .select(
         //     `*, 
         //     guru (*), 
@@ -62,7 +62,7 @@ export default function App() {
         // )
         // console.log("getArticles articles data : ", data);
 
-        setArticles(data)
+        // setArticles(data)
     }
     const navigateTo = (page) => {
         setCurrentPage(page);

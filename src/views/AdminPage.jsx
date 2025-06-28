@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { cmsViews } from "../../utils/admin";
 import { LogOutIcon } from "../components/Icon";
-
+import { cmsViews } from "../utils/admin";
 
 export const AdminPage = ({ handleLogout, dataKajian, setDataKajian }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { fileToBase64, linkify } from "../../utils/chatbot";
+import { fileToBase64, linkify } from "../utils/chatbot";
 import { FileTextIcon, MessageCircleIcon, PaperclipIcon, SendIcon, XIcon } from "../components/Icon";
 import { dataPesantren } from "../datas/data";
 
@@ -125,6 +125,7 @@ export const Chatbot = ({ setShowAdminLink }) => {
 
         } catch (error) {
             // console.error("Error calling local backend:", error);
+            setShowAdminLink(true);
             return {
                 type: 'text',
                 text: `Maaf, terjadi masalah saat menghubungi server lokal: ${error.message}`
@@ -179,12 +180,12 @@ export const Chatbot = ({ setShowAdminLink }) => {
         } else {
             setMessages(prev => [...prev, { type: 'text', text: backendResponse.text, sender: 'bot' }]);
         }
-        // console.log("viewAdminStatus:", backendResponse.text.includes('khodimul markaz'));
         const teks = backendResponse.text
         const kataKunci = import.meta.env.VITE_KEY_WORD_ADMIN;
         if (teks.toLowerCase().includes(kataKunci.toString().toLowerCase())) {
             setShowAdminLink(true);
         }
+        console.log("chat response:", backendResponse.text);
         setIsLoading(false);
     };
 

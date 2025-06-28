@@ -1,6 +1,6 @@
-import { CrudManager } from "../src/components/CrudManager";
-import { BookTextIcon, GraduationCapIcon, NewspaperIcon, UsersIcon } from "../src/components/Icon";
-import { artikelData, dataKajian, guruData, santriData } from "../src/datas/data";
+import { CrudManager } from "../components/CrudManager";
+import { BookTextIcon, GraduationCapIcon, NewspaperIcon, UsersIcon } from "../components/Icon";
+import { artikelData, dataKajian, guruData, santriData } from "../datas/data";
 
 
 export const cmsViews = {
