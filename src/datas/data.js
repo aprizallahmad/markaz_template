@@ -169,9 +169,9 @@ const strukturOrganisasi = {
       },
       sub: [
         {
-          nama: "Ust. Ahmad Afriandi",
+          nama: "Ahmad Afriandi",
           jabatan: "Pondok Pesantren",
-          sub: [{ nama: "Ust. Sulaeman", jabatan: "Pondok Pesantren" }],
+          sub: [{ nama: "Sulaeman", jabatan: "Pondok Pesantren" }],
         },
         {
           nama: "Pajar Abdullah",
@@ -190,7 +190,7 @@ const strukturOrganisasi = {
       },
       sub: [
         {
-          nama: "Ustadz Renald Ghazali",
+          nama: "Renald Ghazali",
           jabatan: "Penjualan",
           sub: [{ nama: "Mukhlis Purnomo", jabatan: "Div Penjualan" }],
         },
