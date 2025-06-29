@@ -141,24 +141,24 @@ const strukturOrganisasi = {
     ],
   },
   bph: {
-    ketua: {
-      id: 5,
-      nama: "Muhammad Sapto Aji",
-      jabatan: "Ketua Umum",
-      bio: "Memimpin dan bertanggung jawab atas keseluruhan kegiatan yayasan.",
-    },
-    sekretaris: {
-      id: 6,
-      nama: "Syaiful Ma'arif",
-      jabatan: "Sekretaris Umum",
-      bio: "Bertanggung jawab atas administrasi dan kesekretariatan.",
-    },
-    bendahara: {
-      id: 7,
-      nama: "Ahmad Irfan Aprizal",
-      jabatan: "Bendahara Umum",
-      bio: "Mengelola keuangan yayasan.",
-    },
+    id: 5,
+    nama: "Muhammad Sapto Aji",
+    jabatan: "Ketua Umum",
+    bio: "Memimpin dan bertanggung jawab atas keseluruhan kegiatan yayasan.",
+    sub: [
+      {
+        id: 6,
+        nama: "Syaiful Ma'arif",
+        jabatan: "Sekretaris Umum",
+        bio: "Bertanggung jawab atas administrasi dan kesekretariatan.",
+      },
+      {
+        id: 7,
+        nama: "Ahmad Irfan Aprizal",
+        jabatan: "Bendahara Umum",
+        bio: "Mengelola keuangan yayasan.",
+      },
+    ],
   },
   divisi: [
     {
@@ -212,8 +212,7 @@ const strukturOrganisasi = {
         {
           nama: "Eka Juliana",
           jabatan: "Yatim & Dhuafa",
-          sub: [
-          ],
+          sub: [],
         },
         {
           nama: "Fauzan Irsandi",
@@ -223,7 +222,6 @@ const strukturOrganisasi = {
             { nama: "Muhammad Annas", jabatan: "Sub Divisi Kemasyarakatan" },
           ],
         },
-         
       ],
     },
     {
@@ -235,11 +233,10 @@ const strukturOrganisasi = {
       id: 15,
       ketua: { nama: "M. Khairul Soleh", jabatan: "Divisi Keamanan & Sarpras" },
       sub: [
-         {
+        {
           nama: "Roby",
           jabatan: "Perawatan Inventaris",
-          sub: [
-          ],
+          sub: [],
         },
       ],
     },

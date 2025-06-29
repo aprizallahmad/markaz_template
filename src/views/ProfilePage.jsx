@@ -114,44 +114,38 @@ export const ProfilPage = () => {
             {/* Level BPH */}
             <div className="relative flex justify-center">
               <PersonCard
-                person={strukturOrganisasi.bph.ketua}
-                onClick={() =>
-                  setSelectedPersonil(strukturOrganisasi.bph.ketua)
-                }
+                person={strukturOrganisasi.bph}
+                onClick={() => setSelectedPersonil(strukturOrganisasi.bph)}
                 className="mt-[-60px]"
               />
             </div>
             <div className="w-full h-1 bg-red-300 max-w-md mx-auto relative -top-6">
               {" "}
             </div>
-            <div className="relative flex flex-wrap justify-center gap-x-40 gap-y-">
-              <div className="flex flex-col items-center">
-                <div className="w-1 h-6 bg-red-300"> </div>
-                <PersonCard
-                  person={strukturOrganisasi.bph.sekretaris}
-                  onClick={() =>
-                    setSelectedPersonil(strukturOrganisasi.bph.sekretaris)
-                  }
-                />
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-1 h-6 bg-red-300"> </div>
-                <PersonCard
-                  person={strukturOrganisasi.bph.bendahara}
-                  onClick={() =>
-                    setSelectedPersonil(strukturOrganisasi.bph.bendahara)
-                  }
-                />
-              </div>
+            <div className="flex flex-wrap justify-center gap-40  -top-6  ">
+              {strukturOrganisasi.bph.sub.map((p) => (
+                <div
+                  key={p.id}
+                  className="flex  flex-col items-center space-y-4 mt-[-60px]"
+                >
+                  <div className="w-1 h-8 bg-red-300"> </div>
+                  <PersonCard
+                    key={p.id}
+                    person={p}
+                    onClick={() => setSelectedPersonil(p)}
+                  />
+                  {p.length > 0 && <div className="w-1 h-4 bg-red-300"> </div>}
+                </div>
+              ))}
             </div>
 
             {/* Level Divisi */}
             <div className="w-full h-1 bg-red-300 max-w-5xl mx-auto "> </div>
-            <div className="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 -top-8 w-full max-w-6xl">
+            <div className="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8  w-full max-w-6xl">
               {strukturOrganisasi.divisi.map((div) => (
                 <div
                   key={div.id}
-                  className="flex flex-col items-center space-y-4 mt-[-60px]"
+                  className="flex flex-col items-center space-y-4 mt-[-40px]"
                 >
                   <div className="w-1 h-8 bg-red-300"> </div>
                   <PersonCard
