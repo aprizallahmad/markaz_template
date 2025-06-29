@@ -1,14 +1,12 @@
 // --- Komponen Halaman (Tidak berubah) ---
 import { useEffect, useRef, useState } from "react";
 import { BuildingIcon, CalendarDaysIcon, SchoolIcon } from "../components/Icon";
-import { dataKajian, dataKegiatan, dataPesantren } from "../datas/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { works } from "../datas/dummy";
-import { Button } from "@mui/material";
 import { Card, CardContent } from "@mui/material";
 import imagePlaceholder from "../assets/placeholder.svg"; // Placeholder image for works
 
-export const HomePage = ({ navigateTo }) => {
+export const HomePage = ({ navigateTo ,dataKegiatan, dataPesantren }) => {
   const canvasRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const categories = ["all", "kajian", "kegiatan", "profil"];

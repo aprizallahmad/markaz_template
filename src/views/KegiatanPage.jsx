@@ -1,6 +1,5 @@
-import { dataKegiatan } from "../datas/data";
 
-export const KegiatanPage = () => (
+export const KegiatanPage = ({dataKegiatan}) => (
     <div className="bg-gray-50">
         <div className="container mx-auto px-6 py-16">
             <h1 className="text-4xl font-bold text-center mb-2 text-red-800">Program & Kegiatan</h1>

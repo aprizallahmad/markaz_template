@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { fileToBase64, linkify } from "../utils/chatbot";
 import { FileTextIcon, MessageCircleIcon, PaperclipIcon, SendIcon, XIcon } from "../components/Icon";
-import { dataPesantren } from "../datas/data";
 
 
 
-export const Chatbot = ({ setShowAdminLink }) => {
+export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");

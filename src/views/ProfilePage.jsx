@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { PersonCard } from "../components/PersonCard";
 import { PersonilModal } from "../components/PersonilModal";
-import { dataPesantren, strukturOrganisasi } from "../datas/data";
 
-export const ProfilPage = () => {
+export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
   const [selectedPersonil, setSelectedPersonil] = useState(null);
 
   return (

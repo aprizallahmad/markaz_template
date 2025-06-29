@@ -1,8 +1,7 @@
-import { dataPesantren } from "../datas/data";
 import { InstagramIcon } from "./Icon";
 
 
-export const Footer = () => (
+export const Footer = ({dataPesantren}) => (
     <footer className="bg-red-800 text-white">
         <div className="container mx-auto px-6 py-8">
             <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
