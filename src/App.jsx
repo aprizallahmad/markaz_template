@@ -97,7 +97,9 @@ export default function App() {
         );
       case "home":
       default:
-        return <HomePage navigateTo={navigateTo} />;
+        return <HomePage navigateTo={navigateTo}
+        dataKegiatan={dataKegiatan}
+        dataPesantren={dataPesantren} />;
     }
   };
   return (

@@ -6,7 +6,7 @@ import { works } from "../datas/dummy";
 import { Card, CardContent } from "@mui/material";
 import imagePlaceholder from "../assets/placeholder.svg"; // Placeholder image for works
 
-export const HomePage = ({ navigateTo ,dataKegiatan, dataPesantren }) => {
+export const HomePage = ({ navigateTo , dataKegiatan, dataPesantren }) => {
   const canvasRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const categories = ["all", "kajian", "kegiatan", "profil"];
@@ -119,7 +119,7 @@ export const HomePage = ({ navigateTo ,dataKegiatan, dataPesantren }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5 }}
           >
-            {dataPesantren.nama}
+            {dataPesantren?.nama}
           </motion.h2>
           <motion.p
             className=" text-lg text-gray-400 sm:text-xl md:text-xl max-w-3xl mx-auto mb-8"
@@ -127,7 +127,7 @@ export const HomePage = ({ navigateTo ,dataKegiatan, dataPesantren }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {dataPesantren.visi}
+            {dataPesantren?.visi}
           </motion.p>
 
           <motion.button
@@ -179,12 +179,12 @@ export const HomePage = ({ navigateTo ,dataKegiatan, dataPesantren }) => {
           <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-red-100">
             <div className="p-8">
               <div className="tracking-wide text-sm text-red-600 font-semibold">
-                {dataKegiatan[0].nama}
+                {dataKegiatan?.[0].nama}
               </div>
               <h3 className="block mt-1 text-2xl leading-tight font-bold text-black">
                 Fokus Penguasaan Bahasa Arab
               </h3>
-              <p className="mt-4 text-gray-500">{dataKegiatan[0].deskripsi}</p>
+              <p className="mt-4 text-gray-500">{dataKegiatan?.[0].deskripsi}</p>
             </div>
           </div>
           <div className="text-center mt-8">
