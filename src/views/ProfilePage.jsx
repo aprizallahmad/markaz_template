@@ -7,7 +7,7 @@ export const ProfilPage = () => {
   const [selectedPersonil, setSelectedPersonil] = useState(null);
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       {selectedPersonil && (
         <PersonilModal
           personil={selectedPersonil}
