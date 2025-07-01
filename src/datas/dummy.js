@@ -631,7 +631,7 @@ export const lapakData = [
   { 
     id: 30, 
     nama: 'Jasa Servis AC Profesional', 
-    harga: 150000, 
+    harga: 75000, 
     no_hp: '+62 823-9210-3761',
     kategori: 'Jasa', 
     subkategori: 'Elektronik', 
@@ -639,8 +639,8 @@ export const lapakData = [
     rating: 1, 
     penjual: 'Roby', 
     lokasi: 'Jakarta Selatan', 
-    latitude: -6.2615, 
-    longitude: 106.8106,
+    latitude: -6.273482  , 
+    longitude: 106.828367,
     gambar: [
       'https://media.discordapp.net/attachments/1121142802663882752/1389598943616438323/IMG_20250701_094539.jpg?ex=6865345d&is=6863e2dd&hm=111b035f0e9fd8bfe9fd74fb9b41e288b54c82595a8f2ea33da585a724aff181&=&format=webp&width=600&height=400',
       'https://media.discordapp.net/attachments/1121142802663882752/1389598943092146277/IMG_20250701_102925.jpg?ex=6865345d&is=6863e2dd&hm=1df6627e7d8110cb2971a17563c57b0779838b90d10c19fade4f8c2fc31b7c1f&=&format=webp&width=600&height=400',

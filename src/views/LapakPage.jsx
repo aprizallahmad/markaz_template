@@ -10,7 +10,7 @@ export const LapakPage = ({ navigateTo }) => {
     const [selectedCategory, setSelectedCategory] = useState('Semua');
     const [selectedSubcategory, setSelectedSubcategory] = useState('Semua');
     const [selectedDetail, setSelectedDetail] = useState(null);
-    const [sortBy, setSortBy] = useState('Paling Sesuai');
+    const [sortBy, setSortBy] = useState('Terlaris');
     const [like, setLike] = useState(false);
     const [likedItems, setLikedItems] = useState(new Set()); // Menggunakan Set untuk menyimpan ID item yang disukai
     const [showLoginModal, setShowLoginModal] = useState(false); // State to control login modal visibility
@@ -248,7 +248,7 @@ export const LapakPage = ({ navigateTo }) => {
                                             <img src={product.gambar?.[0]} alt={product.nama} className="w-full h-48 object-cover" />
                                             <div className="p-4">
                                                 <h4 className="text-md font-semibold text-gray-800  h-12">{product.nama}</h4>
-                                                <p className="text-lg font-bold text-red-600  mt-2">Rp{product.harga}</p>
+                                                <p className="text-lg font-bold text-red-600  mt-2">Rp{product.harga.toLocaleString('id-ID')}</p>
                                                 <div className="text-sm text-gray-500  mt-2">
                                                     <p>{product.lokasi}</p>
                                                     <div className="flex items-center mt-1"
