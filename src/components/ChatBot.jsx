@@ -127,7 +127,7 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
             setShowAdminLink(true);
             return {
                 type: 'text',
-                text: `Maaf, terjadi masalah saat menghubungi server lokal: ${error.message}`
+                text: `Maaf, Untuk Sementara Fitur ini belum bisa dipakai: ${error.message}`
             };
         }
     };
