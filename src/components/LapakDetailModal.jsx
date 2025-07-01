@@ -99,6 +99,21 @@ export const LapakDetailModal = ({ product, onClose }) => {
                                 </p>
                                 <p><strong className="font-semibold">Penjual:</strong> {product.penjual}</p>
                                 <p><strong className="font-semibold">Lokasi:</strong> {product.lokasi}</p>
+                                <p>
+  <strong className="font-semibold">Hubungi:</strong>{" "}
+  {/* Menggunakan Anchor <a> tag untuk link */}
+  <a
+    // Format URL WhatsApp API
+    // Ganti 'nomorHP' dengan {product.no_hp}
+    // Hapus karakter non-angka seperti spasi, tanda kurung, atau strip dari nomor HP jika ada
+    href={`https://wa.me/${product.no_hp?.replace(/\D/g, '')}`} 
+    target="_blank" // Membuka link di tab/jendela baru
+    rel="noopener noreferrer" // Praktik keamanan yang baik untuk target="_blank"
+    className="text-blue-600 hover:underline" // Tambahkan styling Tailwind untuk link
+  >
+    {product.no_hp}
+  </a>
+</p>
                             </div>
                             <p className="text-gray-800 mb-4">{product.description}</p>
                         </div>
