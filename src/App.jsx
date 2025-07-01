@@ -35,6 +35,7 @@ import { Navbar } from "./components/NavBar";
 import { Footer } from "./components/Footer";
 import { Chatbot } from "./components/ChatBot";
 import { AdminPage } from "./views/AdminPage";
+import { LapakPage } from "./views/LapakPage";
 
 // --- Komponen Utama Aplikasi ---
 export default function App() {
@@ -48,9 +49,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    document.title = `Markazul Lughoh | ${
-      currentPage.charAt(0).toUpperCase() + currentPage.slice(1)
-    }`;
+    document.title = `Markazul Lughoh | ${currentPage.charAt(0).toUpperCase() + currentPage.slice(1)
+      }`;
     window.scrollTo(0, 0);
     // console.log("currentPage  : ", currentPage);
 
@@ -85,6 +85,8 @@ export default function App() {
         return <KajianPage dataKajian={dataKajian} />;
       case "kegiatan":
         return <KegiatanPage dataKegiatan={dataKegiatan} />;
+      case 'lapak':
+        return <LapakPage navigateTo={navigateTo} />;
       case "admin":
         return showAdminLink ? (
           <AdminPage handleLogout={handleLogout} />
@@ -98,8 +100,8 @@ export default function App() {
       case "home":
       default:
         return <HomePage navigateTo={navigateTo}
-        dataKegiatan={dataKegiatan}
-        dataPesantren={dataPesantren} />;
+          dataKegiatan={dataKegiatan}
+          dataPesantren={dataPesantren} />;
     }
   };
   return (

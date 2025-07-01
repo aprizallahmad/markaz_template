@@ -8,6 +8,7 @@ export const Navbar = ({ navigateTo, currentPage, showAdminLink }) => {
         { id: 'profil', text: 'Profil', view: true },
         { id: 'kegiatan', text: 'Program', view: true },
         { id: 'kajian', text: 'Info Kajian', view: true },
+        { id: 'lapak', text: 'Lapak Markaz', view: true },
         { id: 'admin', text: 'Admin', view: showAdminLink }
     ];
 

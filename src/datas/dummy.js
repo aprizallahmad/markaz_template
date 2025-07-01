@@ -1,3 +1,5 @@
+import { Key } from "lucide-react";
+
 export const works = [
   {
     id: 1,
@@ -84,3 +86,551 @@ export const works = [
     year: "2023",
   },
 ];
+
+// export const lapakData = [
+//   { id: 1, nama: 'Jasa Servis AC Profesional', harga: 150000, kategori: 'Jasa', subkategori: 'Elektronik', terjual: 150, rating: 5, penjual: 'AC Dingin Selalu', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/3498db/ffffff?text=Servis+AC' },
+//   { id: 2, nama: 'Tisu Wajah Halus (Paket 10)', harga: 34999, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 500, rating: 5, penjual: 'Toko Barokah', lokasi: 'Jakarta Timur', gambar: 'https://placehold.co/600x600/2ecc71/ffffff?text=Tisu+Paket' },
+//   { id: 3, nama: 'Nasi Kebuli Lezat (Porsi Besar)', harga: 45000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 300, rating: 5, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e74c3c/ffffff?text=Nasi+Kebuli' },
+//   { id: 4, nama: 'Jasa Montir Panggilan', harga: 250000, kategori: 'Jasa', subkategori: 'Kendaraan', terjual: 80, rating: 5, penjual: 'Montir Cepat', lokasi: 'Jakarta Pusat', gambar: 'https://placehold.co/600x600/f1c40f/ffffff?text=Montir' },
+//   { id: 5, nama: 'Air Mineral Markaz (Kardus)', harga: 25000, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 1000, rating: 5, penjual: 'Koperasi Markaz', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/9b59b6/ffffff?text=Air+Mineral' },
+//   { id: 6, nama: 'Jasa Desain Logo & Branding', harga: 500000, kategori: 'Jasa', subkategori: 'Kreatif', terjual: 50, rating: 5, penjual: 'Desain Keren', lokasi: 'Online', gambar: 'https://placehold.co/600x600/1abc9c/ffffff?text=Desain+Logo' },
+//   { id: 7, nama: 'Kue Kering Lebaran (Toples)', harga: 85000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 250, rating: 4.8, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e67e22/ffffff?text=Kue+Kering' },
+//   { id: 8, nama: 'Jasa Cuci Karpet Masjid', harga: 10000, kategori: 'Jasa', subkategori: 'Kebersihan', terjual: 120, rating: 4.9, penjual: 'Berkah Clean', lokasi: 'Depok' , gambar: 'https://placehold.co/600x600/34495e/ffffff?text=Cuci+Karpet'},{ id: 1, nama: 'Jasa Servis AC Profesional', harga: 150000, kategori: 'Jasa', subkategori: 'Elektronik', terjual: 150, rating: 4.9, penjual: 'AC Dingin Selalu', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/3498db/ffffff?text=Servis+AC' },
+//   { id: 9, nama: 'Tisu Wajah Halus (Paket 10)', harga: 34999, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 500, rating: 4.8, penjual: 'Toko Barokah', lokasi: 'Jakarta Timur', gambar: 'https://placehold.co/600x600/2ecc71/ffffff?text=Tisu+Paket' },
+//   { id: 10, nama: 'Nasi Kebuli Lezat (Porsi Besar)', harga: 45000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 300, rating: 5.0, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e74c3c/ffffff?text=Nasi+Kebuli' },
+//   { id: 11, nama: 'Jasa Montir Panggilan', harga: 250000, kategori: 'Jasa', subkategori: 'Kendaraan', terjual: 80, rating: 4.7, penjual: 'Montir Cepat', lokasi: 'Jakarta Pusat', gambar: 'https://placehold.co/600x600/f1c40f/ffffff?text=Montir' },
+//   { id: 12, nama: 'Air Mineral Markaz (Kardus)', harga: 25000, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 1000, rating: 4.9, penjual: 'Koperasi Markaz', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/9b59b6/ffffff?text=Air+Mineral' },
+//   { id: 13, nama: 'Jasa Desain Logo & Branding', harga: 500000, kategori: 'Jasa', subkategori: 'Kreatif', terjual: 50, rating: 5.0, penjual: 'Desain Keren', lokasi: 'Online', gambar: 'https://placehold.co/600x600/1abc9c/ffffff?text=Desain+Logo' },
+//   { id: 14, nama: 'Kue Kering Lebaran (Toples)', harga: 85000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 250, rating: 4.8, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e67e22/ffffff?text=Kue+Kering' },
+//   { id: 15, nama: 'Jasa Cuci Karpet Masjid', harga: 10000, kategori: 'Jasa', subkategori: 'Kebersihan', terjual: 120, rating: 4.9, penjual: 'Berkah Clean', lokasi: 'Depok' , gambar: 'https://placehold.co/600x600/34495e/ffffff?text=Cuci+Karpet'},{ id: 1, nama: 'Jasa Servis AC Profesional', harga: 150000, kategori: 'Jasa', subkategori: 'Elektronik', terjual: 150, rating: 4.9, penjual: 'AC Dingin Selalu', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/3498db/ffffff?text=Servis+AC' },
+//   { id: 16, nama: 'Tisu Wajah Halus (Paket 10)', harga: 34999, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 500, rating: 4.8, penjual: 'Toko Barokah', lokasi: 'Jakarta Timur', gambar: 'https://placehold.co/600x600/2ecc71/ffffff?text=Tisu+Paket' },
+//   { id: 17, nama: 'Nasi Kebuli Lezat (Porsi Besar)', harga: 45000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 300, rating: 5.0, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e74c3c/ffffff?text=Nasi+Kebuli' },
+//   { id: 18, nama: 'Jasa Montir Panggilan', harga: 250000, kategori: 'Jasa', subkategori: 'Kendaraan', terjual: 80, rating: 4.7, penjual: 'Montir Cepat', lokasi: 'Jakarta Pusat', gambar: 'https://placehold.co/600x600/f1c40f/ffffff?text=Montir' },
+//   { id: 19, nama: 'Air Mineral Markaz (Kardus)', harga: 25000, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 1000, rating: 4.9, penjual: 'Koperasi Markaz', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/9b59b6/ffffff?text=Air+Mineral' },
+//   { id: 20, nama: 'Jasa Desain Logo & Branding', harga: 500000, kategori: 'Jasa', subkategori: 'Kreatif', terjual: 50, rating: 5.0, penjual: 'Desain Keren', lokasi: 'Online', gambar: 'https://placehold.co/600x600/1abc9c/ffffff?text=Desain+Logo' },
+//   { id: 21, nama: 'Kue Kering Lebaran (Toples)', harga: 85000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 250, rating: 4.8, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e67e22/ffffff?text=Kue+Kering' },
+//   { id: 22, nama: 'Jasa Cuci Karpet Masjid', harga: 10000, kategori: 'Jasa', subkategori: 'Kebersihan', terjual: 120, rating: 4.9, penjual: 'Berkah Clean', lokasi: 'Depok' , gambar: 'https://placehold.co/600x600/34495e/ffffff?text=Cuci+Karpet'},{ id: 1, nama: 'Jasa Servis AC Profesional', harga: 150000, kategori: 'Jasa', subkategori: 'Elektronik', terjual: 150, rating: 4.9, penjual: 'AC Dingin Selalu', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/3498db/ffffff?text=Servis+AC' },
+//   { id: 23, nama: 'Tisu Wajah Halus (Paket 10)', harga: 34999, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 500, rating: 4.8, penjual: 'Toko Barokah', lokasi: 'Jakarta Timur', gambar: 'https://placehold.co/600x600/2ecc71/ffffff?text=Tisu+Paket' },
+//   { id: 24, nama: 'Nasi Kebuli Lezat (Porsi Besar)', harga: 45000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 300, rating: 5.0, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e74c3c/ffffff?text=Nasi+Kebuli' },
+//   { id: 25, nama: 'Jasa Montir Panggilan', harga: 250000, kategori: 'Jasa', subkategori: 'Kendaraan', terjual: 80, rating: 4.7, penjual: 'Montir Cepat', lokasi: 'Jakarta Pusat', gambar: 'https://placehold.co/600x600/f1c40f/ffffff?text=Montir' },
+//   { id: 26, nama: 'Air Mineral Markaz (Kardus)', harga: 25000, kategori: 'Dagang', subkategori: 'Kebutuhan Harian', terjual: 1000, rating: 4.9, penjual: 'Koperasi Markaz', lokasi: 'Jakarta Selatan', gambar: 'https://placehold.co/600x600/9b59b6/ffffff?text=Air+Mineral' },
+//   { id: 27, nama: 'Jasa Desain Logo & Branding', harga: 500000, kategori: 'Jasa', subkategori: 'Kreatif', terjual: 50, rating: 5.0, penjual: 'Desain Keren', lokasi: 'Online', gambar: 'https://placehold.co/600x600/1abc9c/ffffff?text=Desain+Logo' },
+//   { id: 28, nama: 'Kue Kering Lebaran (Toples)', harga: 85000, kategori: 'Dagang', subkategori: 'Makanan', terjual: 250, rating: 4.8, penjual: 'Dapur Ummi', lokasi: 'Bekasi', gambar: 'https://placehold.co/600x600/e67e22/ffffff?text=Kue+Kering' },
+//   { id: 29, nama: 'Jasa Cuci Karpet Masjid', harga: 10000, kategori: 'Jasa', subkategori: 'Kebersihan', terjual: 120, rating: 4.9, penjual: 'Berkah Clean', lokasi: 'Depok' , gambar: 'https://placehold.co/600x600/34495e/ffffff?text=Cuci+Karpet'},
+// ];
+
+export const lapakData = [
+  { 
+    id: 1, 
+    nama: 'Jasa Servis AC Profesional', 
+    harga: 150000, 
+    kategori: 'Jasa', 
+    subkategori: 'Elektronik', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'AC Dingin Selalu', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106, // Contoh koordinat Jakarta Selatan (Kemang)
+    gambar: [
+      'https://placehold.co/600x600/3498db/ffffff?text=Servis+AC',
+      'https://placehold.co/600x400/3498db/ffffff?text=Servis+AC+2',
+      'https://placehold.co/600x400/3498db/ffffff?text=Servis+AC+3'
+    ] 
+  },
+  { 
+    id: 2, 
+    nama: 'Tisu Wajah Halus (Paket 10)', 
+    harga: 34999, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Toko Barokah', 
+    lokasi: 'Jakarta Timur', 
+    latitude: -6.2259, 
+    longitude: 106.9011, // Contoh koordinat Jakarta Timur (Rawamangun)
+    gambar: [
+      'https://placehold.co/600x400/2ecc71/ffffff?text=Tisu+Paket+1',
+      'https://placehold.co/600x400/2ecc71/ffffff?text=Tisu+Paket+2'
+    ] 
+  },
+  { 
+    id: 3, 
+    nama: 'Nasi Kebuli Lezat (Porsi Besar)', 
+    harga: 45000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749, // Contoh koordinat Bekasi (Kota Bintang)
+    gambar: [
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+1',
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+2',
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+3'
+    ] 
+  },
+  { 
+    id: 4, 
+    nama: 'Jasa Montir Panggilan', 
+    harga: 250000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kendaraan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Montir Cepat', 
+    lokasi: 'Jakarta Pusat', 
+    latitude: -6.1754, 
+    longitude: 106.8272, // Contoh koordinat Jakarta Pusat (Monas)
+    gambar: [
+      'https://placehold.co/600x400/f1c40f/ffffff?text=Montir+1',
+      'https://placehold.co/600x400/f1c40f/ffffff?text=Montir+2'
+    ] 
+  },
+  { 
+    id: 5, 
+    nama: 'Air Mineral Markaz (Kardus)', 
+    harga: 25000, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Koperasi Markaz', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106, // Contoh koordinat Jakarta Selatan (Kemang)
+    gambar: [
+      'https://placehold.co/600x400/9b59b6/ffffff?text=Air+Mineral+1',
+      'https://placehold.co/600x400/9b59b6/ffffff?text=Air+Mineral+2'
+    ] 
+  },
+  { 
+    id: 6, 
+    nama: 'Jasa Desain Logo & Branding', 
+    harga: 500000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kreatif', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Desain Keren', 
+    lokasi: 'Online', // Untuk lokasi 'Online', lat/long bisa diisi null atau 0
+    latitude: null, 
+    longitude: null, 
+    gambar: [
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+1',
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+2',
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+3'
+    ] 
+  },
+  { 
+    id: 7, 
+    nama: 'Kue Kering Lebaran (Toples)', 
+    harga: 85000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749, // Contoh koordinat Bekasi
+    gambar: [
+      'https://placehold.co/600x400/e67e22/ffffff?text=Kue+Kering+1',
+      'https://placehold.co/600x400/e67e22/ffffff?text=Kue+Kering+2'
+    ] 
+  },
+  { 
+    id: 8, 
+    nama: 'Jasa Cuci Karpet Masjid', 
+    harga: 10000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kebersihan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Berkah Clean', 
+    lokasi: 'Depok', 
+    latitude: -6.3984, 
+    longitude: 106.8291, // Contoh koordinat Depok (Margonda)
+    gambar: [
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+1',
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+2',
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+3'
+    ] 
+  }, 
+  { 
+    id: 9, 
+    nama: 'Tisu Wajah Halus (Paket 10)', 
+    harga: 34999, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Toko Barokah', 
+    lokasi: 'Jakarta Timur', 
+    latitude: -6.2259, 
+    longitude: 106.9011,
+    gambar: [
+      'https://placehold.co/600x400/2ecc71/ffffff?text=Tisu+Paket+V2+1'
+    ] 
+  },
+  { 
+    id: 10, 
+    nama: 'Nasi Kebuli Lezat (Porsi Besar)', 
+    harga: 45000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+V2+1'
+    ] 
+  },
+  { 
+    id: 11, 
+    nama: 'Jasa Montir Panggilan', 
+    harga: 250000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kendaraan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Montir Cepat', 
+    lokasi: 'Jakarta Pusat', 
+    latitude: -6.1754, 
+    longitude: 106.8272,
+    gambar: [
+      'https://placehold.co/600x400/f1c40f/ffffff?text=Montir+V2+1'
+    ] 
+  },
+  { 
+    id: 12, 
+    nama: 'Air Mineral Markaz (Kardus)', 
+    harga: 25000, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Koperasi Markaz', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106,
+    gambar: [
+      'https://placehold.co/600x400/9b59b6/ffffff?text=Air+Mineral+V2+1'
+    ] 
+  },
+  { 
+    id: 13, 
+    nama: 'Jasa Desain Logo & Branding', 
+    harga: 500000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kreatif', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Desain Keren', 
+    lokasi: 'Online', 
+    latitude: null, 
+    longitude: null,
+    gambar: [
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+V2+1'
+    ] 
+  },
+  { 
+    id: 14, 
+    nama: 'Kue Kering Lebaran (Toples)', 
+    harga: 85000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e67e22/ffffff?text=Kue+Kering+V2+1'
+    ] 
+  },
+  { 
+    id: 15, 
+    nama: 'Jasa Cuci Karpet Masjid', 
+    harga: 10000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kebersihan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Berkah Clean', 
+    lokasi: 'Depok', 
+    latitude: -6.3984, 
+    longitude: 106.8291,
+    gambar: [
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+V2+1'
+    ] 
+  },
+  
+  { 
+    id: 16, 
+    nama: 'Tisu Wajah Halus (Paket 10)', 
+    harga: 34999, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Toko Barokah', 
+    lokasi: 'Jakarta Timur', 
+    latitude: -6.2259, 
+    longitude: 106.9011,
+    gambar: [
+      'https://placehold.co/600x400/2ecc71/ffffff?text=Tisu+Paket+V3+1'
+    ] 
+  },
+  { 
+    id: 17, 
+    nama: 'Nasi Kebuli Lezat (Porsi Besar)', 
+    harga: 45000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+V3+1'
+    ] 
+  },
+  { 
+    id: 18, 
+    nama: 'Jasa Montir Panggilan', 
+    harga: 250000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kendaraan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Montir Cepat', 
+    lokasi: 'Jakarta Pusat', 
+    latitude: -6.1754, 
+    longitude: 106.8272,
+    gambar: [
+      'https://placehold.co/600x400/f1c40f/ffffff?text=Montir+V3+1'
+    ] 
+  },
+  { 
+    id: 19, 
+    nama: 'Air Mineral Markaz (Kardus)', 
+    harga: 25000, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Koperasi Markaz', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106,
+    gambar: [
+      'https://placehold.co/600x400/9b59b6/ffffff?text=Air+Mineral+V3+1'
+    ] 
+  },
+  { 
+    id: 20, 
+    nama: 'Jasa Desain Logo & Branding', 
+    harga: 500000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kreatif', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Desain Keren', 
+    lokasi: 'Online', 
+    latitude: null, 
+    longitude: null,
+    gambar: [
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+V3+1'
+    ] 
+  },
+  { 
+    id: 21, 
+    nama: 'Kue Kering Lebaran (Toples)', 
+    harga: 85000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e67e22/ffffff?text=Kue+Kering+V3+1'
+    ] 
+  },
+  { 
+    id: 22, 
+    nama: 'Jasa Cuci Karpet Masjid', 
+    harga: 10000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kebersihan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Berkah Clean', 
+    lokasi: 'Depok', 
+    latitude: -6.3984, 
+    longitude: 106.8291,
+    gambar: [
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+V3+1'
+    ] 
+  },
+  // Data Duplikat ID 1 (akan diatasi oleh logika unik sebelumnya)
+  
+  { 
+    id: 23, 
+    nama: 'Tisu Wajah Halus (Paket 10)', 
+    harga: 34999, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Toko Barokah', 
+    lokasi: 'Jakarta Timur', 
+    latitude: -6.2259, 
+    longitude: 106.9011,
+    gambar: [
+      'https://placehold.co/600x400/2ecc71/ffffff?text=Tisu+Paket+V4+1'
+    ] 
+  },
+  { 
+    id: 24, 
+    nama: 'Nasi Kebuli Lezat (Porsi Besar)', 
+    harga: 45000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e74c3c/ffffff?text=Nasi+Kebuli+V4+1'
+    ] 
+  },
+  { 
+    id: 25, 
+    nama: 'Jasa Montir Panggilan', 
+    harga: 250000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kendaraan', 
+    terjual: 0 , 
+    rating: 0, 
+    penjual: 'Montir Cepat', 
+    lokasi: 'Jakarta Pusat', 
+    latitude: -6.1754, 
+    longitude: 106.8272,
+    gambar: [
+      'https://placehold.co/600x400/f1c40f/ffffff?text=Montir+V4+1'
+    ] 
+  },
+  { 
+    id: 26, 
+    nama: 'Air Mineral Markaz (Kardus)', 
+    harga: 25000, 
+    kategori: 'Dagang', 
+    subkategori: 'Kebutuhan Harian', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Koperasi Markaz', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106,
+    gambar: [
+      'https://placehold.co/600x400/9b59b6/ffffff?text=Air+Mineral+V4+1'
+    ] 
+  },
+  { 
+    id: 27, 
+    nama: 'Jasa Desain Logo & Branding', 
+    harga: 500000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kreatif', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Desain Keren', 
+    lokasi: 'Online', 
+    latitude: null, 
+    longitude: null,
+    gambar: [
+      'https://placehold.co/600x400/1abc9c/ffffff?text=Desain+Logo+V4+1'
+    ] 
+  },
+  { 
+    id: 28, 
+    nama: 'Kue Kering Lebaran (Toples)', 
+    harga: 85000, 
+    kategori: 'Dagang', 
+    subkategori: 'Makanan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Dapur Ummi', 
+    lokasi: 'Bekasi', 
+    latitude: -6.2374, 
+    longitude: 106.9749,
+    gambar: [
+      'https://placehold.co/600x400/e67e22/ffffff?text=Kue+Kering+V4+1'
+    ] 
+  },
+  { 
+    id: 29, 
+    nama: 'Jasa Cuci Karpet Masjid', 
+    harga: 10000, 
+    kategori: 'Jasa', 
+    subkategori: 'Kebersihan', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'Berkah Clean', 
+    lokasi: 'Depok', 
+    latitude: -6.3984, 
+    longitude: 106.8291,
+    gambar: [
+      'https://placehold.co/600x400/34495e/ffffff?text=Cuci+Karpet+V4+1'
+    ] 
+  },
+  { 
+    id: 30, 
+    nama: 'Jasa Servis AC Profesional', 
+    harga: 150000, 
+    kategori: 'Jasa', 
+    subkategori: 'Elektronik', 
+    terjual: 0, 
+    rating: 0, 
+    penjual: 'AC Dingin Selalu', 
+    lokasi: 'Jakarta Selatan', 
+    latitude: -6.2615, 
+    longitude: 106.8106,
+    gambar: [
+      'https://placehold.co/600x400/3498db/ffffff?text=Servis+AC+Lama+1',
+      'https://placehold.co/600x400/3498db/ffffff?text=Servis+AC+Lama+2'
+    ] 
+  },
+];
+
+
+const filterSubkategoriJasa = lapakData
+  .filter(item => item.kategori === 'Jasa') // Filter item dengan kategori 'Jasa'
+  .map(item => item.subkategori);  
+
+  const filterSubkategoriDagang = lapakData
+  .filter(item => item.kategori === 'Dagang') // Filter item dengan kategori 'Jasa'
+  .map(item => item.subkategori); 
+
+const subkategoriJasa = [...new Set(filterSubkategoriJasa)]
+const  subkategoriDagang = [...new Set(filterSubkategoriDagang)]
+
+export const kategoriLapak = {
+    'Jasa': subkategoriJasa ,
+    'Dagang': subkategoriDagang,
+};
