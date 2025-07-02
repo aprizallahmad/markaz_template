@@ -90,14 +90,10 @@ export const LapakDetailModal = ({ product, onClose }) => {
                             <div className="mb-4 text-gray-700">
                                 <p><strong className="font-semibold">Kategori:</strong> {product.kategori}</p>
                                 <p><strong className="font-semibold">Subkategori:</strong> {product.subkategori}</p>
-                                <p><strong className="font-semibold">Terjual:</strong> {product.terjual}</p>
                                 <p className="flex items-center">
-                                    <strong className="font-semibold mr-1">Rating:</strong> {product.rating}
-                                    <svg className="w-5 h-5 ml-1 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.538-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path>
-                                    </svg>
+                                    <strong className="font-semibold mr-1">Disukai :</strong> {product.rating } 
                                 </p>
-                                <p><strong className="font-semibold">Penjual:</strong> {product.penjual}</p>
+                                <p><strong className="font-semibold">Pelapak:</strong> {product.penjual}</p>
                                 <p><strong className="font-semibold">Lokasi:</strong> {product.lokasi}</p>
                                 <p>
   <strong className="font-semibold">Hubungi:</strong>{" "}

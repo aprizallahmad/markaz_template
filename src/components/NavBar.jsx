@@ -5,7 +5,7 @@ export const Navbar = ({ navigateTo, currentPage, showAdminLink }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navLinks = [
         { id: 'home', text: 'Beranda', view: true },
-        { id: 'profil', text: 'Profil', view: true },
+        { id: 'tentangKami', text: 'Tentang Kami', view: true },
         { id: 'kegiatan', text: 'Program', view: true },
         { id: 'kajian', text: 'Info Kajian', view: true },
         { id: 'lapak', text: 'Lapak Markaz', view: true },
@@ -25,7 +25,7 @@ export const Navbar = ({ navigateTo, currentPage, showAdminLink }) => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
                         <button onClick={() => navigateTo('home')} className="flex items-center space-x-3">
-                            <img src="../src/assets/logo_markaz_copy.png" alt="Logo Markazul Lughoh" className="h-28 w-48" />
+                            <img src="/logo_markaz.png" alt="Logo Markazul Lughoh" className="h-38 w-48" />
                             {/* <span className="text-xl font-bold text-red-800 hidden sm:block">Markazul Lughoh</span> */}
                         </button>
                     </div>

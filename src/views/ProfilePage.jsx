@@ -49,13 +49,13 @@ export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
           </h2>
           <div className="flex flex-col items-center space-y-12">
             {/* Level Pembina, Penasihat, Pengawas */}
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center z-10">
               <PersonCard
                 person={strukturOrganisasi.pembina}
                 onClick={() => setSelectedPersonil(strukturOrganisasi.pembina)}
               />
             </div>
-            <div className="w-full h-1 bg-red-300 max-w-md mx-auto relative -top-6">
+            <div className="w-full h-1 bg-slate-300 rounded-2xl max-w-md mx-auto relative -top-6">
               {" "}
             </div>
             <div className="flex flex-wrap justify-center gap-40  -top-6  ">
@@ -64,14 +64,15 @@ export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
                   key={p.id}
                   className="flex  flex-col items-center space-y-4 mt-[-60px]"
                 >
-                  <div className="w-1 h-8 bg-red-300"> </div>
+                  <div className="w-1 h-8 bg-slate-300 rounded-2xl"> </div>
                   <PersonCard
                     key={p.id}
                     person={p}
                     onClick={() => setSelectedPersonil(p)}
+                    className="z-10"
                   />
                   {p.sub.length > 0 && (
-                    <div className="w-1 h-4 bg-red-300"> </div>
+                    <div className="w-1 h-4 bg-slate-300 rounded-2xl"> </div>
                   )}
                   <div className="flex flex-col items-center space-y-2 ">
                     {p.sub.map((subdiv) => (
@@ -96,7 +97,7 @@ export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
                   key={p.id}
                   className="flex flex-col items-center space-y-4 mt-[-60px]"
                 >
-                  <div className="w-1 h-8 bg-red-300"> </div>
+                  <div className="w-1 h-8 bg-slate-300 rounded-2xl"> </div>
 
                   <PersonCard
                     key={p.id}
@@ -108,17 +109,17 @@ export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
             </div>
 
             {/* Garis Vertikal */}
-            <div className="w-1 h-12 bg-red-300 "> </div>
+            <div className="w-1 h-12 bg-slate-300 rounded-2xl "> </div>
 
             {/* Level BPH */}
-            <div className="relative flex justify-center">
+            <div className="relative flex justify-center z-10">
               <PersonCard
                 person={strukturOrganisasi.bph}
                 onClick={() => setSelectedPersonil(strukturOrganisasi.bph)}
-                className="mt-[-60px]"
+                className="mt-[-40px]"
               />
             </div>
-            <div className="w-full h-1 bg-red-300 max-w-md mx-auto relative -top-6">
+            <div className="w-full h-1 bg-slate-300 rounded-2xl max-w-md mx-auto relative -top-6">
               {" "}
             </div>
             <div className="flex flex-wrap justify-center gap-40  -top-6  ">
@@ -127,33 +128,34 @@ export const ProfilPage = ({dataPesantren, strukturOrganisasi}) => {
                   key={p.id}
                   className="flex  flex-col items-center space-y-4 mt-[-60px]"
                 >
-                  <div className="w-1 h-8 bg-red-300"> </div>
+                  <div className="w-1 h-8 bg-slate-300 rounded-2xl"> </div>
                   <PersonCard
                     key={p.id}
                     person={p}
                     onClick={() => setSelectedPersonil(p)}
+                    className="z-10"
                   />
-                  {p.length > 0 && <div className="w-1 h-4 bg-red-300"> </div>}
+                  {p.length > 0 && <div className="w-1 h-4 bg-slate-300 rounded-2xl"> </div>}
                 </div>
               ))}
             </div>
 
             {/* Level Divisi */}
-            <div className="w-full h-1 bg-red-300 max-w-5xl mx-auto "> </div>
-            <div className="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8  w-full max-w-6xl">
+            <div className="w-full h-1 bg-slate-300 rounded-2xl max-w-5xl mx-auto "> </div>
+            <div className="relative grid  md:grid-cols-5 lg:grid-cols-6 gap-8  w-full max-w-6xl">
               {strukturOrganisasi.divisi.map((div) => (
                 <div
                   key={div.id}
                   className="flex flex-col items-center space-y-4 mt-[-40px]"
                 >
-                  <div className="w-1 h-8 bg-red-300"> </div>
+                  <div className="w-1 h-8 bg-slate-300 rounded-2xl"> </div>
                   <PersonCard
                     person={div.ketua}
                     onClick={() => setSelectedPersonil(div.ketua)}
-                    className="h-72"
+                    className=" h-72 z-10"
                   />
                   {div.sub.length > 0 && (
-                    <div className="w-1 h-4 bg-red-300"> </div>
+                    <div className="w-1 h-4 bg-slate-300 rounded-2xl"> </div>
                   )}
                   <div className="flex flex-col items-center space-y-2 ">
                     {div.sub.map((subdiv) => (

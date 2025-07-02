@@ -74,7 +74,7 @@ export default function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case "profil":
+      case "tentangKami":
         return (
           <ProfilPage
             dataPesantren={dataPesantren}
@@ -105,13 +105,13 @@ export default function App() {
     }
   };
   return (
-    <div className="bg-white font-sans">
+    <div className="bg-white font-sans flex flex-col min-h-screen">
       <Navbar
         navigateTo={navigateTo}
         currentPage={currentPage}
         showAdminLink={showAdminLink}
       />
-      <main>{renderPage()}</main>
+      <main  className="flex-grow">{renderPage()}</main>
       <Footer dataPesantren={dataPesantren} />
       <Chatbot
         setShowAdminLink={setShowAdminLink}

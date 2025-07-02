@@ -38,7 +38,7 @@ export const LapakPage = ({ navigateTo }) => {
         const newProducts = Array.from({ length: 12 }, (_, i) => {
             const id = page * 12 + i;
             const isJasa = Math.random() < 0.5;
-            const category = isJasa ? 'Jasa' : 'Dagang';
+            const category = isJasa ? 'Jasa' : 'Barang';
             const subcategory = isJasa ? 'Elektronik' : 'Makanan';
             const seller = isJasa ? 'AC Dingin Selalu' : 'Dapur Ummi';
             const location = ['Jakarta Selatan', 'Jakarta Timur', 'Jakarta Pusat', 'Bekasi'][Math.floor(Math.random() * 4)];
@@ -278,7 +278,7 @@ export const LapakPage = ({ navigateTo }) => {
                                                                 }}
                                                             />
                                                         )}
-                                                        <span className="ml-1">{product.rating} | Disukai {product.terjual}+</span>
+                                                        <span className="ml-1">{product.rating}  </span>
                                                     </div>
                                                 </div>
                                                 <p className="text-sm text-gray-700  mt-2 font-medium">{product.penjual}</p>
