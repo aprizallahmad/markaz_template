@@ -140,7 +140,6 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
 
         } catch (error) {
             // console.error("Error calling local backend:", error);
-            setShowAdminLink(true);
             return {
                 type: 'text',
                 text: `Maaf, Untuk Sementara Fitur ini belum bisa dipakai: ${error.message}`
