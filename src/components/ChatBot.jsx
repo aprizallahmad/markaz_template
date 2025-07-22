@@ -14,11 +14,17 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
     const [uploadedFile, setUploadedFile] = useState(null);
     const messagesEndRef = useRef(null);
     const fileInputRef = useRef(null);
-    const [endpoint, setEndpoint] = useState('http://localhost:3000/generate-text')
     const chatWindowRef = useRef(null); // >>>>> ganti disini
     const chatIconRef = useRef(null); // >>>>> ganti disini
     const inputRef = useRef(null);
 
+    const VITE_BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL;
+    const BASE_API_URL =
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:3000' // URL backend lokal saat development
+      : VITE_BACKEND_API_URL;   // URL backend Vercel saat production (sudah di-deploy)
+  
+  
     useEffect(() => {
         // Cukup set state awal saat komponen dimuat
         setMessages([{ type: 'text', text: `Assalamualaikum! Ada yang bisa saya bantu terkait ${dataPesantren.nama}?`, sender: "bot" }]);
@@ -85,7 +91,7 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
 
     // Fungsi baru untuk berinteraksi dengan backend lokal Anda
     const getBackendResponse = async (prompt, fileData = null) => {
-
+        console.error("prompt :", prompt);
 
         const payload = { prompt };
         if (fileData) {
@@ -98,12 +104,12 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
                 const formData = new FormData();
                 formData.append('image', fileData); // 'image' adalah nama field yang diharapkan Multer (upload.single('image'))
                 formData.append('prompt', prompt); // Tambahkan prompt juga jika diperlukan
-                response = await fetch('http://localhost:3000/generate-from-image', {
+                response = await fetch(`${BASE_API_URL}/api/generate-from-image`, {
                     method: 'POST',
                     body: formData,
                 });
             } else {
-                response = await fetch(endpoint, {
+                response = await fetch(`${BASE_API_URL}/api/generate-text`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -145,7 +151,6 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
         if (uploadedFile) {
             if (uploadedFile.type === 'image') {
                 setInputType('image')
-                setEndpoint('http://localhost:3000/generate-from-image')
                 const base64Data = await fileToBase64(uploadedFile.file);
                 filePayload = {
                     mimeType: uploadedFile.file.type,
@@ -162,7 +167,6 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
             }
         } else {
             setInputType('text')
-            setEndpoint('http://localhost:3000/generate-text')
             setMessages(prev => [...prev, { type: 'text', text: userPrompt, sender: 'user' }]);
         }
 
