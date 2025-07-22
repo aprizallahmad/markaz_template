@@ -20,11 +20,11 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
 
     const VITE_BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL;
     const BASE_API_URL =
-    import.meta.env.MODE === 'development'
-      ? 'http://localhost:3000' // URL backend lokal saat development
-      : VITE_BACKEND_API_URL;   // URL backend Vercel saat production (sudah di-deploy)
-  
-  
+        import.meta.env.MODE === 'development'
+            ? 'http://localhost:3000' // URL backend lokal saat development
+            : VITE_BACKEND_API_URL;   // URL backend Vercel saat production (sudah di-deploy)
+
+
     useEffect(() => {
         // Cukup set state awal saat komponen dimuat
         setMessages([{ type: 'text', text: `Assalamualaikum! Ada yang bisa saya bantu terkait ${dataPesantren.nama}?`, sender: "bot" }]);
@@ -36,27 +36,27 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
         if (isOpen) {
             scrollToBottom();
         }
-    }, [messages, isOpen]); 
+    }, [messages, isOpen]);
     useEffect(() => {
         if (isOpen && !isLoading) {
-            setTimeout(() => inputRef.current?.focus(), 100); 
+            setTimeout(() => inputRef.current?.focus(), 100);
         }
     }, [isOpen, isLoading]);
-    
-    
+
+
     useEffect(() => {
         function handleClickOutside(event) {
             if (chatWindowRef.current && !chatWindowRef.current.contains(event.target) && chatIconRef.current && !chatIconRef.current.contains(event.target)) {
-                 if(isOpen){
+                if (isOpen) {
                     setIsOpen(false);
-                 }
+                }
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]); 
+    }, [isOpen]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -89,6 +89,9 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
         }
     };
 
+    // >>>>> Dapatkan API Key dari Environment Variables Frontend
+    const VITE_APP_API_KEY = import.meta.env.VITE_APP_API_KEY;
+
     // Fungsi baru untuk berinteraksi dengan backend lokal Anda
     const getBackendResponse = async (prompt, fileData = null) => {
         console.error("prompt :", prompt);
@@ -100,6 +103,11 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
 
         try {
             let response
+            const commonHeaders = { // >>>>> Buat objek header umum
+                'X-API-Key': VITE_APP_API_KEY, // >>>>> Sertakan API Key di sini
+                // ... header lainnya yang mungkin diperlukan
+            };
+
             if (inputType == 'image') {
                 const formData = new FormData();
                 formData.append('image', fileData); // 'image' adalah nama field yang diharapkan Multer (upload.single('image'))
@@ -107,11 +115,13 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
                 response = await fetch(`${BASE_API_URL}/api/generate-from-image`, {
                     method: 'POST',
                     body: formData,
+                    headers: commonHeaders, // >>>>> Gunakan objek header umum
                 });
             } else {
                 response = await fetch(`${BASE_API_URL}/api/generate-text`, {
                     method: 'POST',
                     headers: {
+                        ...commonHeaders,
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(payload),
@@ -199,7 +209,7 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
                     <MessageCircleIcon className="w-8 h-8" />
                 </button>
             </div>
-            <div ref={chatWindowRef}  className={`fixed bottom-0 right-0 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 w-full h-full sm:w-96 sm:h-[70vh] sm:max-h-[600px] sm:bottom-6 sm:right-6' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+            <div ref={chatWindowRef} className={`fixed bottom-0 right-0 z-50 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 w-full h-full sm:w-96 sm:h-[70vh] sm:max-h-[600px] sm:bottom-6 sm:right-6' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
                 <div className={`bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col h-full w-full overflow-hidden`}>
                     <div className="flex-shrink-0 flex justify-between items-center p-4 bg-red-500 text-white">
                         <h3 className="font-bold">Asisten Virtual</h3>
@@ -212,7 +222,7 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
                             <div key={index} className={`flex my-2 ${msg.sender === 'bot' ? 'justify-start' : 'justify-end'}`}>
                                 <div className={`px-4 py-2 rounded-2xl max-w-xs lg:max-w-md shadow-sm ${msg.sender === 'bot' ? 'bg-red-100 text-gray-800 rounded-bl-none' : 'bg-blue-500 text-white rounded-br-none'}`}>
                                     {msg.type === 'image' && <img src={msg.src} alt="Gambar buatan AI" className="rounded-lg shadow-md max-w-full" />}
-                                    {msg.type === 'text' && <p className="text-sm" dangerouslySetInnerHTML={{ __html: linkify(msg.text)  }} />}
+                                    {msg.type === 'text' && <p className="text-sm" dangerouslySetInnerHTML={{ __html: linkify(msg.text) }} />}
                                     {msg.type === 'file_info' && <p className="text-sm italic text-gray-500">{msg.text}</p>}
                                     {msg.type === 'user_upload' && (
                                         <div className="flex flex-col gap-2">
@@ -248,7 +258,7 @@ export const Chatbot = ({ setShowAdminLink, dataPesantren }) => {
                     )}
                     <div className="flex-shrink-0 p-4 border-t bg-white">
                         <form onSubmit={handleSendMessage} className="flex items-center space-x-2">
-                            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*,.pdf,.doc,.docx,.mp3" name="input-chat"/>
+                            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*,.pdf,.doc,.docx,.mp3" name="input-chat" />
                             <button type="button" onClick={() => fileInputRef.current.click()} className="p-2 text-gray-500 hover:text-red-600" aria-label="Lampirkan file">
                                 <PaperclipIcon className="w-5 h-5" />
                             </button>
