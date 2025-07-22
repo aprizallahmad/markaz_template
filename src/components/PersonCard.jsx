@@ -3,7 +3,7 @@
 
 export const PersonCard = ({ person, onClick, className = "" }) => (
   <div
-    className={`bg-white p-3 rounded-lg shadow-md text-center cursor-pointer transform hover:scale-150 hover:shadow-xl transition-all duration-75 w-40 flex-shrink-0 ${className}`}
+    className={`bg-white p-3 rounded-lg shadow-md text-center cursor-pointer transform hover:scale-105 hover:shadow-xl transition-all duration-75 w-40 flex-shrink-0 ${className}`}
     onClick={onClick}
   >
     <img

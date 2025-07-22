@@ -131,7 +131,7 @@ export const HomePage = ({ navigateTo , dataKegiatan, dataPesantren }) => {
           </motion.p>
 
           <motion.button
-            onClick={() => navigateTo("profil")}
+            onClick={() => navigateTo("tentangKami")}
             className="bg-blue-500 hover:bg-blue-800 text-red-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
           >
             Mengenal Kami

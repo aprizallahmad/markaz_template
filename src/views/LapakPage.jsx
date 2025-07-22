@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { kategoriLapak, lapakData } from "../datas/dummy";
 import { Heart, HeartIcon, SearchIcon, StarIcon } from "lucide-react";
 import { LapakDetailModal } from "../components/LapakDetailModal";
 import { LoginModal } from "../components/LoginModal";
 
+import { kategoriLapak, lapakData } from "../datas/data";
 
 export const LapakPage = ({ navigateTo }) => {
     const [searchTerm, setSearchTerm] = useState('');
