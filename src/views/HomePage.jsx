@@ -5,8 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { works } from "../datas/dummy";
 import { Card, CardContent } from "@mui/material";
 import imagePlaceholder from "../assets/placeholder.svg"; // Placeholder image for works
+import { Link } from "react-router-dom";
 
-export const HomePage = ({ navigateTo , dataKegiatan, dataPesantren }) => {
+export const HomePage = ({ navigateTo, dataKegiatan, dataPesantren }) => {
   const canvasRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const categories = ["all", "kajian", "kegiatan", "profil"];
@@ -130,12 +131,14 @@ export const HomePage = ({ navigateTo , dataKegiatan, dataPesantren }) => {
             {dataPesantren?.visi}
           </motion.p>
 
-          <motion.button
-            onClick={() => navigateTo("tentangKami")}
-            className="bg-blue-500 hover:bg-blue-800 text-red-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
-          >
-            Mengenal Kami
-          </motion.button>
+          <Link to="/tentang-kami">
+            <motion.button
+              onClick={() => navigateTo("tentang-kami")}
+              className="bg-blue-500 hover:bg-blue-800 text-red-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+            >
+              Mengenal Kami
+            </motion.button>
+          </Link>
         </div>
       </div>
 
@@ -184,16 +187,20 @@ export const HomePage = ({ navigateTo , dataKegiatan, dataPesantren }) => {
               <h3 className="block mt-1 text-2xl leading-tight font-bold text-black">
                 Fokus Penguasaan Bahasa Arab
               </h3>
-              <p className="mt-4 text-gray-500">{dataKegiatan?.[0].deskripsi}</p>
+              <p className="mt-4 text-gray-500">
+                {dataKegiatan?.[0].deskripsi}
+              </p>
             </div>
           </div>
           <div className="text-center mt-8">
-            <button
-              onClick={() => navigateTo("kegiatan")}
-              className="text-red-600 font-semibold hover:underline"
-            >
-              Lihat Semua Program &rarr;
-            </button>
+            <Link to="/tentang-kami">
+              <button
+                onClick={() => navigateTo("kegiatan")}
+                className="text-red-600 font-semibold hover:underline"
+              >
+                Lihat Semua Program &rarr;
+              </button>
+            </Link>
           </div>
         </div>
       </div>
