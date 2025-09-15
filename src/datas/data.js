@@ -339,7 +339,7 @@ export const lapakData = [
   {
     id: 1,
     nama: "Jasa Servis AC Profesional",
-    harga: 75000,
+    harga: 75_000,
     no_hp: "+62 823-9210-3761",
     kategori: "Jasa",
     subkategori: "Elektronik",
@@ -354,7 +354,7 @@ export const lapakData = [
     nama: "Adabul Insan",
     deskripsi_product:
       " Sebuah kitab yang berisikan tentang nasihat-nasihat bagaimana beretika (adab) yang baik terhadap sesama manusia ",
-    harga: 100.0,
+    harga: 100_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -374,7 +374,7 @@ export const lapakData = [
     nama: "Kisah-Kisah Penuh Hikmah",
     deskripsi_product:
       "Sebuah kitab/buku yang berisikan tentang kisah-kisah dari para ulama yang diringkas dan mudah untuk dipahami. Mulai dari ulama salaf (terdahulu), ulama fiqih, ulama tasawuf, ulama hadits, ulama tafsir, dan ahlul bait",
-    harga: 150.0,
+    harga: 150_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -395,7 +395,7 @@ export const lapakData = [
     nama: "Kalam Guru",
     deskripsi_product:
       " Sebuah kitab/buku yang berisikan quote-qoute yang sangat relevan dengan kehidupan sehari-hari yang sangat dibutuhkan bagi setiap pelajar atau penuntut ilmu",
-    harga: "80.000",
+    harga: 80_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -415,7 +415,7 @@ export const lapakData = [
     nama: "Tathbiqi 1",
     deskripsi_product:
       " Sebuah kitab/buku untuk para pemula yang ingin belajar nahwu dengan metode tathbiqi (peneraran). kitab/buku ini juga merupakan materi tahapan awal untuk para santri di Ponpes Markazul Lughoh, baik yang mukim atau kalong (pulang pergi)",
-    harga: "35.000",
+    harga: 35_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -431,7 +431,7 @@ export const lapakData = [
     nama: "Tathbiqi 2",
     deskripsi_product:
       " Sebuah kitab/buku untuk para pemula yang ingin belajar nahwu dan merupakan lanjutan dari tathbiqi 1. kitab/buku ini juga merupakan materi tahapan awal untuk para santri di Ponpes Markazul Lughoh, baik yang mukim atau kalong (pulang pergi)",
-    harga: "70.000",
+    harga: 70_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -451,7 +451,7 @@ export const lapakData = [
     nama: "Imla",
     deskripsi_product:
       " Sebuah kitab/buku yang merupakan pedoman dalam menulis kalimat bahasa arab",
-    harga: "30.000",
+    harga: 30_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -467,7 +467,7 @@ export const lapakData = [
     nama: "Hadiah Pengantin",
     deskripsi_product:
       "Sebuah kitab/buku yang berisikan ilmu fiqih dalam berumah tangga yang sangat dibutuhkan bagi seorang yang akan atau sudah menikah",
-    harga: "80.000",
+    harga: 80_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
@@ -487,7 +487,7 @@ export const lapakData = [
     nama: "Adabussibyan",
     deskripsi_product:
       " Sebuah kitab yang berisikan tentang bagaimana adab-adab bagi anak kecil",
-    harga: "35.000",
+    harga: 35_000,
     no_hp: " +62 878-6523-0267",
     kategori: "Barang",
     subkategori: "Buku",
